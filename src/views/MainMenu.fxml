@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+    <children>
+        <VBox alignment="CENTER" layoutX="300.0" layoutY="150.0" spacing="20.0">
+            <children>
+                <Label text="Gestion de la Ferme" textAlignment="CENTER">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+
+                <Button mnemonicParsing="false" onAction="#goToFarm" prefWidth="200.0" text="Aller à la ferme" />
+                <Button mnemonicParsing="false" onAction="#goToStore" prefWidth="200.0" text="Aller au magasin" />
+                <Button mnemonicParsing="false" onAction="#advanceDay" prefWidth="200.0" text="Avancer d'un jour" />
+                <Button mnemonicParsing="false" onAction="#exitGame" prefWidth="200.0" text="Quitter" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

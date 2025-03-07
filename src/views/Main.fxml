@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller.MainController"
+            prefHeight="400.0"
+            prefWidth="600.0">
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <Button fx:id="farmButton" text="Aller à la Ferme" onAction="#goToFarm"/>
+            <Button fx:id="storeButton" text="Aller au Magasin" onAction="#goToStore"/>
+            <Button fx:id="financeButton" text="Tableau de Finances" onAction="#goToFinance"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.FarmController"
+            prefHeight="600.0"
+            prefWidth="800.0"
+            stylesheets="@../styles/farm.css">
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" bottom="10"/>
+            </padding>
+            <Label text="Ma Ferme : Gérer Cultures et Animaux" styleClass="title-label" />
+            <Label fx:id="moneyLabel" text="Argent: 0 pièces" />
+        </VBox>
+    </top>
+    <center>
+        <HBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="10" bottom="10" left="20" right="20"/>
+            </padding>
+            <VBox spacing="10" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+                <Label text="Champs (Cultures)" styleClass="section-label" />
+                <GridPane fx:id="fieldGrid" hgap="10" vgap="10" alignment="CENTER">
+                    <!-- Field buttons will be added dynamically -->
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="plantCropButton" text="Planter" onAction="#plantCrop"/>
+                    <Button fx:id="harvestCropButton" text="Récolter" onAction="#harvestCrop"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+                <Label text="Animaux" styleClass="section-label" />
+                <VBox fx:id="animalContainer" spacing="5" alignment="CENTER">
+                    <!-- Animal content will be added dynamically -->
+                    <Label text="Pas d'animaux pour l'instant" />
+                </VBox>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="feedAnimalsButton" text="Nourrir" onAction="#feedAnimals" disable="true"/>
+                    <Button fx:id="collectProductsButton" text="Collecter" onAction="#collectProducts" disable="true"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="10" bottom="20"/>
+            </padding>
+            <Button fx:id="goBackButton" text="Retour au menu principal" onAction="#goBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>

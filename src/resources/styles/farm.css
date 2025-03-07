@@ -1,0 +1,76 @@
+/* General styling */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-background-color: #f5f5f5;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #3d8b40;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+}
+
+/* Top label (title) */
+BorderPane > .top > .label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 15;
+    -fx-text-fill: #2E7D32;
+}
+
+/* List view */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1;
+}
+
+.list-cell {
+    -fx-padding: 8;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #8BC34A;
+}
+
+/* Money display */
+#moneyLabel {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1B5E20;
+}
+
+/* Main sections */
+VBox, HBox {
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+}
+
+/* Store items */
+#storeItemsListView {
+    -fx-pref-height: 300;
+}
+
+/* Bottom navigation */
+BorderPane > .bottom {
+    -fx-padding: 15;
+    -fx-alignment: center-right;
+}
