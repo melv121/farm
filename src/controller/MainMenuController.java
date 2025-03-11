@@ -1,9 +1,6 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainMenuController {
@@ -17,7 +14,7 @@ public class MainMenuController {
     @FXML
     private void goToFarm() {
         try {
-            MainController.showFarm();
+            MainController.getInstance().showFarm();
         } catch (Exception e) {
             System.err.println("Farm.fxml not found in resources");
             e.printStackTrace();
@@ -27,7 +24,7 @@ public class MainMenuController {
     @FXML
     private void goToStore() {
         try {
-            MainController.showStore();
+            MainController.getInstance().showStore();
         } catch (Exception e) {
             System.err.println("Store.fxml not found in resources");
             e.printStackTrace();
@@ -36,10 +33,9 @@ public class MainMenuController {
 
     @FXML
     private void advanceDay() {
-        MainController.advanceDay();
+        MainController.getInstance().advanceDay();
         System.out.println("Advancing the day...");
     }
-
 
     @FXML
     private void exitGame() {

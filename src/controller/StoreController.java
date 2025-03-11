@@ -18,7 +18,7 @@ public class StoreController {
     private ListView<String> storeItemsListView;
 
     public void initialize() {
-        farm = MainController.getFarm();
+        farm = MainController.getInstance().getFarm();
         updateMoneyDisplay();
 
         // Populate store items
@@ -94,7 +94,7 @@ public class StoreController {
     @FXML
     public void handleBack(ActionEvent event) {
         try {
-            MainController.showMainMenu();
+            MainController.getInstance().showMainMenu();
         } catch (Exception e) {
             e.printStackTrace();
         }

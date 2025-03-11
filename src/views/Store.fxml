@@ -5,7 +5,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controller.StoreController"
+            fx:controller="controller.StoreController"
             prefHeight="400.0"
             prefWidth="600.0">
     <top>
@@ -13,20 +13,13 @@
     </top>
     <center>
         <VBox spacing="10" alignment="CENTER">
-            <Label text="Acheter : " />
-            <HBox spacing="10" alignment="CENTER">
-                <Button fx:id="seedsButton" text="Graines" onAction="#buySeeds"/>
-                <Button fx:id="animalsButton" text="Animaux" onAction="#buyAnimals"/>
-                <Button fx:id="animalFoodButton" text="Nourriture pour Animaux" onAction="#buyAnimalFood"/>
-            </HBox>
-            <Label text="Vendre : " />
-            <HBox spacing="10" alignment="CENTER">
-                <Button fx:id="cropsButton" text="Récoltes" onAction="#sellCrops"/>
-                <Button fx:id="animalProductsButton" text="Produits Animaux" onAction="#sellAnimalProducts"/>
-            </HBox>
+            <Label text="Articles disponibles:" />
+            <ListView fx:id="storeItemsListView" prefHeight="200" />
+            <Button text="Acheter l'article sélectionné" onAction="#handlePurchase" />
+            <Label fx:id="moneyLabel" text="Money: $0" />
         </VBox>
     </center>
     <bottom>
-        <Button fx:id="goBackButton" text="Retour" onAction="#goBack"/>
+        <Button fx:id="goBackButton" text="Retour" onAction="#handleBack" />
     </bottom>
 </BorderPane>

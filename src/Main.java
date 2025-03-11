@@ -12,36 +12,16 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            // Store the primary stage in MainController
-            MainController.setPrimaryStage(primaryStage);
+            // Create MainController with primaryStage
+            MainController mainController = new MainController(primaryStage);
 
-            // Create the farm
-            Farm farm = new Farm();
+            // Set up the farm with initial money
+            Farm farm = mainController.getFarm();
             farm.setMoney(500);
 
-            // Initialize game with farm
-            MainController.initializeGame(farm);
+            // Show the main menu
+            mainController.showMainMenu();
 
-            // Load the main menu with controller
-            URL fxmlUrl = getClass().getClassLoader().getResource("views/MainMenu.fxml");
-            if (fxmlUrl == null) {
-                System.err.println("MainMenu.fxml not found in resources");
-                return;
-            }
-
-            System.out.println("Loading MainMenu from: " + fxmlUrl);
-
-            FXMLLoader loader = new FXMLLoader(fxmlUrl);
-            Parent root = loader.load();
-
-            // Get controller and set primaryStage
-            MainMenuController controller = loader.getController();
-            controller.setPrimaryStage(primaryStage);
-
-            Scene scene = new Scene(root, 800, 600);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("Farm Simulator");
-            primaryStage.show();
         } catch (Exception e) {
             System.err.println("Failed to start application: " + e.getMessage());
             e.printStackTrace();

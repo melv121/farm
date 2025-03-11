@@ -29,7 +29,7 @@ public class FarmController {
 
     @FXML
     public void initialize() {
-        farm = MainController.getFarm();
+        farm = MainController.getInstance().getFarm();
         updateMoneyDisplay();
         setupFieldGrid();
         startGrowthTimer();
@@ -184,13 +184,13 @@ public class FarmController {
 
     @FXML
     public void goBack() {
-        // Arrête le timer quand on quitte la vue
-        if (growthTimeline != null) {
-            growthTimeline.stop();
-        }
+        backToMainMenu(); // Appel de la méthode existante
+    }
 
+    @FXML
+    public void backToMainMenu() {
         try {
-            MainController.showMainMenu();
+            MainController.getInstance().showMainMenu();
         } catch (Exception e) {
             e.printStackTrace();
         }
